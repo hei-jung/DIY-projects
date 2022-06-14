@@ -1,7 +1,8 @@
 import os
 from PIL import Image
 
-root = '/Users/heiju/Desktop/대학원/수업자료/22-1/기초영상의학의이해와인체영상해부학/'
+# 
+root = ''
 files = [root + f for f in os.listdir(root) if os.path.isdir(root + f)]
 
 for i in range(len(files)):
