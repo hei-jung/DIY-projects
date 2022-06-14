@@ -1,11 +1,13 @@
 import os
 from PIL import Image
 
-# 
-root = ''
+# 절대경로 
+root = '/Users/foo/Desktop/'
+# 이미지 폴더들
 files = [root + f for f in os.listdir(root) if os.path.isdir(root + f)]
 
 for i in range(len(files)):
+    # 이미지 폴더 이름과 같은 이름의 pdf 파일 만들기
     pdf_path = root + files[i].split('/')[-1] + '.pdf'
     print(pdf_path, end='')
 
@@ -16,6 +18,7 @@ for i in range(len(files)):
         if '.png' in f  # 이미지 파일이 아닌 파일이 포함되는 것을 방지
     ])
 
+    # 이미지 불러오기
     images = [
         Image.open(img)
         for img in img_path_list
