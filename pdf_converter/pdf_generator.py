@@ -2,13 +2,7 @@ import os
 from PIL import Image
 
 
-def pdf_generator(img_folder_path, pdf_path):
-    print(pdf_path)
-    img_path_list = sorted([
-        img_folder_path + '/' + f
-        for f in os.listdir(img_folder_path)
-    ])
-
+def pdf_generator(img_path_list, pdf_path):
     # 이미지 불러오기
     images = []
     for img in img_path_list:
@@ -32,4 +26,4 @@ def pdf_generator(img_folder_path, pdf_path):
         backgrounds[0].save(
             pdf_path, "PDF", resolution=100.0, save_all=True, append_images=backgrounds[1:])
 
-    print(' saved')
+    return 0
